@@ -15,11 +15,11 @@ MonoBehaviour:
   active: 1
   texture:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: af96a3bfb6150094aae4993229bc170d, type: 3}
+    m_Value: {fileID: 2800000, guid: 1a06a8975420b1743b92841e16e5bd84, type: 3}
     dimension: 1
   contribution:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.7
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

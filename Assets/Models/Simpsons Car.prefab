@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3819597652682243441}
   - component: {fileID: 648663713697868808}
   - component: {fileID: 4855086663726770032}
+  - component: {fileID: -2310503090027974064}
   m_Layer: 0
   m_Name: Simpsons Car
   m_TagString: Untagged
@@ -92,6 +93,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-2310503090027974064
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492855720575136865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 9856854721c6b344b87a39be7e25c4bd, type: 3}
 --- !u!1 &7207931266481947176
 GameObject:
   m_ObjectHideFlags: 0
