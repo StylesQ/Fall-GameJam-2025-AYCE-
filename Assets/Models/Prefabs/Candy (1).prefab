@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f4bf4215fad63d84ab849184313c359a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.357
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bf4215fad63d84ab849184313c359a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.401
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bf4215fad63d84ab849184313c359a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.256816
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4bf4215fad63d84ab849184313c359a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4bf4215fad63d84ab849184313c359a, type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -100,5 +104,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00775397, y: 0.0036766469, z: 0.0036643082}
-  m_Center: {x: 0.0000013835961, y: 0, z: 0.0018321541}
+  m_Size: {x: 0.012586368, y: 0.0043055, z: 0.009146611}
+  m_Center: {x: 0.0000013835961, y: -5.4196252e-17, z: 0.0018321541}

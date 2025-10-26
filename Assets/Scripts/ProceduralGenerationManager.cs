@@ -34,6 +34,7 @@ public class ProceduralGenerationManager : MonoBehaviour
         {
             GenerateNewTile();
         }
+        Debug.Log("DIST: " + dist);
     }
 
     void GenerateNewTile()

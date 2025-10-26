@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float rotSpeed = 5;
     public float maxYaw = 5;
     public float maxPitchVel = 3;
+    public float jumpforce = 50;
+    public float rotationInput;
 
 
 
@@ -28,18 +30,21 @@ public class PlayerMovement : MonoBehaviour
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         );
+        rotationInput = Input.GetAxis("Horizontal");
     }
 
     void FixedUpdate()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, LayerMask.NameToLayer("Ground")))
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
         {
+            wheelchairGraphic.transform.rotation = Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal);
             Debug.DrawRay(hit.point, hit.normal);
+            Debug.DrawRay(hit.point, Vector3.Cross(transform.right, hit.normal));
         }
-        
+
         Vector3 forceVector = new Vector2(
             movementInput.x,
-            Mathf.Clamp(movementInput.y, -movementInput.y/5, movementInput.y)
+            Mathf.Clamp(movementInput.y, -movementInput.y / 5, movementInput.y)
         );
 
         rb.AddForceAtPosition(
@@ -48,10 +53,19 @@ public class PlayerMovement : MonoBehaviour
             ForceMode.Force
         );
 
-        rb.angularVelocity = new Vector3(
-            Mathf.Clamp(rb.angularVelocity.x, -maxPitchVel, maxPitchVel),
-            Mathf.Clamp(movementInput.x * rotSpeed, -maxYaw, maxYaw),
+        transform.Rotate(new Vector3(
+            // Mathf.Clamp(movementInput.x * rotSpeed, -maxYaw, maxYaw),
+            0,
+            Mathf.Clamp(rotationInput, -maxPitchVel, maxPitchVel),
             0
-        );
+        ));
+    }
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ramp")
+        {
+            rb.AddForce(transform.up * jumpforce/2 + transform.forward * jumpforce);
+        }
     }
 }
