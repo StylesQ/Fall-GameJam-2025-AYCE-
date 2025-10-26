@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Vector2 movementInput;
     [SerializeField] private Transform forcePos;
+    [SerializeField] private GameObject wheelchairGraphic;
+
+
     public float speed = 5;
     public float rotSpeed = 5;
     public float maxYaw = 5;
@@ -29,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, LayerMask.NameToLayer("Ground")))
+        {
+            Debug.DrawRay(hit.point, hit.normal);
+        }
+        
         Vector3 forceVector = new Vector2(
             movementInput.x,
             Mathf.Clamp(movementInput.y, -movementInput.y/5, movementInput.y)
